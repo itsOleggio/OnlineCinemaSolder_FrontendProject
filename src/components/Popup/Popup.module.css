@@ -1,0 +1,160 @@
+.btnContainer button {
+  padding: 12px 32px;
+  text-transform: uppercase;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border: none;
+  border-radius: 5px;
+
+  box-shadow: 0 5px 20px 1px #0000005f;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.btnContainer button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btnContainer button:nth-child(n) {
+  background: #16A6AF;
+  color: #fff;
+}
+
+.btnContainer button:last-child {
+  background: #fff;
+  color: #63536C;
+}
+
+.popupContainer form {
+  padding: 0 102px;
+}
+
+.btnCross {
+  background: inherit;
+  border: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.btnCross:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.btnCross img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.popupContainer {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popupTitle {
+  width: 100%;
+  padding: 16px 42px;
+
+  display: flex;
+  justify-content: space-between;
+
+  background: #63536C;
+}
+
+.popupContainer article {
+  width: 960px;
+  background: #eae9eb;
+
+  z-index: 4;
+}
+
+.popupContainer section {
+  width: 100%;
+  background: #eae9eb;
+
+  z-index: 4;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.inputPlace {
+  display: flex;
+  flex-direction: column;
+
+  margin: 34px 0 8px 0;
+}
+
+.inputPlace label {
+  margin-top: 8px;
+  margin-bottom: 2px;
+  color: #848484;
+}
+
+.inputPlace textarea {
+  padding: 8px;
+  font-size: 16px;
+
+  width: 756px;
+  height: 80px;
+
+  resize: none;
+
+  border: #B7B7B7 1px solid;
+  border-radius: 5px;
+}
+
+.inputPlace textarea:focus,
+.inputPlace input:focus,
+.inputPlace select:focus {
+  outline: #000000 1px solid;
+}
+
+
+.inputPlace input,
+.inputPlace select {
+  padding: 8px;
+  font-size: 16px;
+
+  border: #B7B7B7 1px solid;
+  border-radius: 5px;
+
+  position: relative;
+}
+
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  gap: 15px;
+  margin: 35px 0;
+}
+
+.error {
+  margin-top: 8px;
+  color: red;
+}
+
+.timer {
+  background-image: url('../../assets/icons/time.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}

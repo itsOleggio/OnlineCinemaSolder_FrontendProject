@@ -1,0 +1,74 @@
+.paymentContainer {
+  max-width: 990px;
+  width: 100%;
+  background: #f1ebe6f2;
+}
+
+.infoBlock {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hallInfo {
+  font-weight: 400;
+}
+
+.timeInfo {
+  font-weight: 700;
+}
+
+.btnPlace {
+  background: #f1ebe6f2;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPlace button {
+  padding: 12px 56px;
+  background: #16a6af;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  border-radius: 3px;
+  height: 40px;
+}
+
+.btnPlace button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.ticketContainer {
+  background: #f1ebe6f2;
+}
+
+.ticketContainer h3 {
+  text-transform: uppercase;
+  color: #c76f00;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 25px 15px;
+}
+
+.infoRow {
+  display: flex;
+  gap: 4px;
+}
+
+.footerBlock {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qrContainer {
+  padding: 30px 30px;
+}

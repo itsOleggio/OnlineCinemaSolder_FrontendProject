@@ -1,0 +1,21 @@
+.backgroundImage::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('./../../assets/background/admin-background.jpg') center/cover no-repeat;
+  z-index: -1;
+}
+
+.overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.main {
+  max-width: 972px;
+  height: 100vh;
+  margin: 0 auto;
+}

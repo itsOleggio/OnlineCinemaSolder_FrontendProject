@@ -1,0 +1,80 @@
+.filmsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+  height: 100%;
+}
+
+.filmCard {
+  width: 100%;
+  padding: 15px;
+  background: #F1EBE6F2;
+  display: flex;
+  flex-direction: column;
+}
+
+.filmInfo {
+  max-width: 835px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 15px;
+  overflow: hidden;
+}
+
+.filmCard img {
+  width: 125px;
+  height: 175px;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.filmCard h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+}
+
+.upperFilmCardInfo {
+  display: flex;
+}
+
+.hallSector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.lowerFilmCardInfo button {
+  gap: 4px;
+  background: #fff;
+  width: 53px;
+  height: 33px;
+  padding: 8px;
+  border-radius: 3px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.424);
+  transition: all 0.4s ease-in-out;
+  border: none;
+}
+
+.halls {
+  display: flex;
+  gap: 4px;
+}
+
+.lowerFilmCardInfo button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  .filmsContainer {
+    margin-left: 12%;
+  }
+}

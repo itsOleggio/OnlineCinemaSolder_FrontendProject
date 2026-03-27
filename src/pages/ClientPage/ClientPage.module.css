@@ -1,0 +1,36 @@
+.backgroundImage::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("./../../assets/background/client-background.jpg") center/cover no-repeat;
+  z-index: -1;
+}
+
+.backgroundImage main {
+  max-width: 972px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.headerContainer {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 14px 14px 0;
+}
+
+.headerContainer button {
+  padding: 12px;
+  color: white;
+  background: #16A6AF;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  border-radius: 3px;
+}
+
+.headerContainer button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

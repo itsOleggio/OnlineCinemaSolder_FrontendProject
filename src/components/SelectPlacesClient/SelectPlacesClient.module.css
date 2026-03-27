@@ -1,0 +1,98 @@
+.placeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #171D24;
+  height: 100%;
+  padding: 20px 0;
+}
+
+.screen {
+  position: relative;
+  width: 284px;
+  height: 20px;
+  margin: 0 auto 30px;
+  border: 1px solid #525252;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  color: #525252;
+  text-align: center;
+  line-height: 20px;
+  text-transform: lowercase;
+  background: linear-gradient(270deg, #e8e8e8 0%, #c8c8c8 100%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.screen::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+  width: 80%;
+  height: 8px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.rows {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.seat,
+.inactiveSeat {
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+  border-radius: 4px;
+  display: flex;
+  gap: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.seat:hover {
+  background: #c8c8c8 !important;
+}
+
+.selected {
+  background: #0A828A !important;
+}
+
+.SelectedPlace {
+  color: #b7dff4;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.SelectedPlace h3 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.SelectedPlace section {
+  display: flex;
+}
+
+.SelectedPlace li {
+  margin-right: 4px;
+}
+
+.placeSeats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.seatInfo {
+  color: #fff;
+  font-weight: 300;
+
+  display: flex;
+}
