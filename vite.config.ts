@@ -1,17 +1,9 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+const repoName = '/OnlineCinemaSolder_FrontendProject/'
 
 export default defineConfig({
+  base: repoName,
   plugins: [react()],
-
-  // server: {
-  //   proxy: {
-  //     "/api": {
-  //       target: "https://shfe-diplom.neto-server.ru",
-  //       changeOrigin: true,
-  //       secure: false,
-  //       rewrite: (path) => path.replace(/^\/api/, ""),
-  //     },
-  //   },
-  // },
-});
+})
