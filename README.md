@@ -33,13 +33,13 @@ __Функции__
 
 ## Зависимости 
 
-- react
-- react-router-dom
-- zustand — управление состоянием
-- dayjs — работа с датами
-- axios — HTTP-запросы
-- dotenv
-- react-qr-code — генерация QR
+- `react`
+- `react-router-dom`
+- `zustand` — управление состоянием
+- `dayjs` — работа с датами
+- `axios` — HTTP-запросы
+- `dotenv`
+- `react-qr-code` — генерация QR
 
 __Архитектура__
 
