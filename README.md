@@ -125,9 +125,15 @@ Cinema_FrontendProject/
 
 __Установка и запуск__
 
+[Посмотреть демо](https://itsoleggio.github.io/OnlineCinemaSolder_FrontendProject/)
+или 
+Запустить локально 
 ```bash
 git clone https://github.com/your-repo.git
 cd Cinema_FrontendProject
 npm install
 npm run dev
 ```
+
+## Демо
+
