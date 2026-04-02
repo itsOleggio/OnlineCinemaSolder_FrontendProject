@@ -3,10 +3,8 @@ import style from "./PaymentPage.module.css";
 import mainStyle from "./../ClientPage/ClientPage.module.css";
 import { Header } from "../../components/Header/Header";
 import { useEffect, useState } from "react";
-import dayjs from "dayjs";
 import { SelectPlacesClient } from "../../components/SelectPlacesClient/SelectPlacesClient";
 import type { ITicket } from "../../model/ITicket";
-import convertName from "../../utils/convertHallsName";
 import { buyTicket } from "../../service/ticketAPI";
 import ReactQRCode from "react-qr-code";
 
@@ -14,10 +12,10 @@ export function PaymentPage() {
   const { seanceId } = useParams();
   const location = useLocation();
 
-  const { filmName, hallName, time, defaultPrice, vipPrice } =
+  const { filmName, hallName, time, defaultPrice, vipPrice, selectDay} =
     location.state ?? {};
 
-  const today = dayjs().format("YYYY-MM-DD");
+  const today = selectDay;
 
   const [selectedSeats, setSelectedSeats] = useState<ITicket[]>([]);
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -30,7 +28,7 @@ export function PaymentPage() {
       " | " +
       filmName +
       " | " +
-      convertName(hallName) +
+      hallName +
       " | " +
       time;
   }, []);
@@ -110,7 +108,7 @@ export function PaymentPage() {
 
                 <div className={style.infoRow}>
                   <span>В зал:</span>
-                  <b>{convertName(hallName)}</b>
+                  <b>{hallName}</b>
                 </div>
 
                 <div className={style.infoRow}>

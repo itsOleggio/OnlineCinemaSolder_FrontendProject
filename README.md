@@ -134,6 +134,3 @@ cd Cinema_FrontendProject
 npm install
 npm run dev
 ```
-
-## Демо
-

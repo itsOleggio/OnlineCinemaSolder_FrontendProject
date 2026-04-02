@@ -9,7 +9,6 @@ import style from "./Editor.module.css";
 import type { IHalls, HallSeatType } from "../../model/IHalls";
 import type { IFilms } from "../../model/IFilm";
 import type { ISession } from "../../model/ISession";
-import convertName from "../../utils/convertHallsName";
 import { ShowPlaces } from "../ShowPlaces/ShowPlaces";
 import { resizeHallConfig } from "../../utils/createHallConfig";
 import { AddFilm, AddHall } from "../Popup";
@@ -23,11 +22,11 @@ import { useFilmColorStore } from "../../store/films.store";
 import { OpenSales } from "./OpenSales/OpenSales";
 
 export function Editor() {
-  const [hallManagement, setHallManagement] = useState(false);
-  const [hallConfig, setHallConfig] = useState(false);
-  const [hallPrice, setHallPrice] = useState(false);
-  const [hallSeansGrid, setHallSeansGrid] = useState(false);
-  const [openSells, setOpenSells] = useState(false);
+  const [hallManagement, setHallManagement] = useState(true);
+  const [hallConfig, setHallConfig] = useState(true);
+  const [hallPrice, setHallPrice] = useState(true);
+  const [hallSeansGrid, setHallSeansGrid] = useState(true);
+  const [openSells, setOpenSells] = useState(true);
 
   const [halls, setHalls] = useState<IHalls[]>([]);
   const [selectedHall, setSelectedHall] = useState<IHalls | null>(null);
@@ -45,6 +44,8 @@ export function Editor() {
   const [selectedHallId, setSelectedHallId] = useState<number | null>(null);
   const [draggedSeanceId, setDraggedSeanceId] = useState<number | null>(null);
   const [selectedSeanceId, setSelectedSeanceId] = useState<number | null>(null);
+
+  const [error, setError] = useState<string>("");
   // const [isDraggingSeance, setIsDraggingSeance] = useState(false);
 
   const { colors, initColor } = useFilmColorStore();
@@ -138,14 +139,24 @@ export function Editor() {
   };
 
   const saveSelectedPrice = async () => {
-    if (selectedHall) {
-      await postHallPriceChange(
-        selectedHall.id,
-        selectedHall.hall_price_standart,
-        selectedHall.hall_price_vip,
-      );
-      loadHalls();
+    setError("");
+
+    if (!selectedHall) return;
+
+    if (
+      selectedHall?.hall_price_standart <= 0 ||
+      selectedHall?.hall_price_vip <= 0
+    ) {
+      setError("Цены должны быть больше 0");
+      return;
     }
+
+    await postHallPriceChange(
+      selectedHall.id,
+      selectedHall.hall_price_standart,
+      selectedHall.hall_price_vip,
+    );
+    loadHalls();
   };
 
   const handleDeleteHall = async (hallId: number) => {
@@ -205,7 +216,7 @@ export function Editor() {
                 <span>Доступные залы:</span>
                 {halls.map((item) => (
                   <div key={item.id} className={style.halls}>
-                    <span>– {convertName(item.hall_name)}</span>
+                    <span className={style.hallName}>– {item.hall_name}</span>
                     <button
                       type="button"
                       className={style.basket}
@@ -274,7 +285,7 @@ export function Editor() {
                         className={`${style.configButton} ${selectedHall?.id === item.id ? style.configButtonActive : ""}`}
                         onClick={() => handleSelectedHall(item.id)}
                       >
-                        {convertName(item.hall_name)}
+                        {item.hall_name}
                       </button>
                     ))}
                   </div>
@@ -410,7 +421,7 @@ export function Editor() {
                     className={`${style.configButton} ${selectedHall?.id === item.id ? style.configButtonActive : ""}`}
                     onClick={() => handleSelectedHall(item.id)}
                   >
-                    {convertName(item.hall_name)}
+                    {item.hall_name}
                   </button>
                 ))}
               </div>
@@ -453,6 +464,7 @@ export function Editor() {
                     за <div className={style.vipSeat}></div> обычные кресла
                   </span>
                 </div>
+                <span className={style.error}>{error}</span>
                 <div className={style.containerBtn}>
                   <button
                     type="button"
@@ -579,7 +591,7 @@ export function Editor() {
 
                   return (
                     <div key={hall.id}>
-                      <h3>{convertName(hall.hall_name)}</h3>
+                      <h3 className={style.hallName}>{hall.hall_name}</h3>
 
                       <div className={style.hallContainer}>
                         <div>

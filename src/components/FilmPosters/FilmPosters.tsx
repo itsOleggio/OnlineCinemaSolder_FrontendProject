@@ -4,7 +4,6 @@ import { getAllData } from "../../service/alldataAPI";
 import style from "./FilmPosters.module.css";
 import type { ISession } from "../../model/ISession";
 import type { IHalls } from "../../model/IHalls";
-import convertHallsName from "../../utils/convertHallsName";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 
@@ -122,7 +121,7 @@ export function FilmPosters({
           <div className={style.lowerFilmCardInfo}>
             {film.halls.map((hall, i) => (
               <div key={i} className={style.hallSector}>
-                <strong>{convertHallsName(hall.hallName)}</strong>
+                <strong>{hall.hallName}</strong>
 
                 <div className={style.halls}>
                   {hall.times.map((t) => (
@@ -137,6 +136,7 @@ export function FilmPosters({
                             time: t.time,
                             defaultPrice: hall.hall_price_standart,
                             vipPrice: hall.hall_price_vip,
+                            selectDay: dayjs(selectDay).format("YYYY-MM-DD"),
                           },
                         })
                       }

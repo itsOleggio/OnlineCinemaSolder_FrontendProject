@@ -3,8 +3,6 @@ import { useState } from "react";
 import style from "../Popup.module.css";
 import closeIcon from "../../../assets/icons/close.png";
 
-import convertName from "../../../utils/convertHallsName";
-
 import type { IHalls } from "../../../model/IHalls";
 import type { IFilms } from "../../../model/IFilm";
 import type { ISession } from "../../../model/ISession";
@@ -78,7 +76,7 @@ export function AddSession({
 
                   {halls.map((hall) => (
                     <option key={hall.id} value={hall.id}>
-                      {convertName(hall.hall_name)}
+                      {hall.hall_name}
                     </option>
                   ))}
                 </select>

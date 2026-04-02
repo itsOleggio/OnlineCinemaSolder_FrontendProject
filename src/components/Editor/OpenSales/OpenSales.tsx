@@ -1,5 +1,4 @@
 import style from "./../Editor.module.css";
-import convertName from "../../../utils/convertHallsName";
 import type { IHalls } from "../../../model/IHalls";
 import { changeSaleStatus } from "../../../service/hallConfigAPI";
 
@@ -41,7 +40,7 @@ export function OpenSales({
                 className={`${style.configButton} ${selectedHall?.id === item.id ? style.configButtonActive : ""}`}
                 onClick={() => handleSelectedHall(item.id)}
               >
-                {convertName(item.hall_name)}
+                {item.hall_name}
               </button>
             ))}
           </div>
